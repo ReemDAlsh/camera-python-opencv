@@ -16,14 +16,15 @@
 import cv2
 import numpy as np
 
-image = cv2.imread("lena256rgb.jpg")
+image = cv2.imread("CROP.jpg")
 
 # Convert BGR to HSV
 hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
 # Define range of purple color in HSV
-lower = np.array([141, 0, 0])
-upper = np.array([164, 145, 197])
+low_green = np.array([25, 52, 72])
+high_green = np.array([102, 255, 255])
+
 
 # Threshold the HSV image to get only purple colors
 binary = cv2.inRange(hsv, lower, upper)
